@@ -1,0 +1,401 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,900,500);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Roboto', 'sans-serif';
+    -webkit-font-smoothing: antialiased;
+    background: #fff;
+}
+
+::selection {
+    color: #fff;
+    background: #008CBA;
+}
+
+p {
+    color: #858585;
+}
+
+a {
+    color: #008CBA;
+    text-decoration: none;
+    text-shadow: none;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+    a:hover {
+        color: #008CBA; /* 6EAA00 */
+        text-decoration: none;
+    }
+
+.btn {
+    border: 0px;
+    border-radius: 0px;
+}
+
+    .btn:hover {
+        background: #008CBA; /* 6EAA00 */
+        color: #FFF;
+    }
+
+.btn-primary {
+    background: #008CBA;
+}
+
+.form-control {
+    border-radius: 0px;
+}
+
+.mrgn30 {
+    margin: 30px 0;
+}
+
+.copyright {
+    color: #6D6D6D;
+    background: #333333;
+    padding: 20px 0;
+}
+
+#top {
+    position: relative;
+}
+
+/* Header 
+----------------------------------------------*/
+.header {
+    position: fixed;
+    width: 100%;
+    background: #333333; /* #FFF */
+    z-index: 50;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    top: 0px;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #008CBA;
+    background-color: #008CBA;
+}
+
+    .navbar-inverse .navbar-toggle .icon-bar {
+        /*background-color: #008CBA;*/
+    }
+
+    .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+        background: #008CBA;
+    }
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #008CBA;
+}
+
+.navbar-inverse .navbar-toggle:hover .icon-bar {
+    background: #fff;
+}
+
+.navbar-toggle {
+    margin-top: 15px;
+}
+
+/*----Nav ----*/
+.header .navbar-brand {
+    float: left;
+    padding: 8px 0 0 0;
+    line-height: 18px;
+    height: 50px;
+    background-color: #333333;
+    /*color:#008CBA;*/
+}
+
+.navbar-brand b {
+    color: #008CBA;
+}
+
+.logo {
+    font-size: 2.2em;
+    text-shadow: none;
+}
+
+    .logo:hover {
+        color: #5A5A5A;
+    }
+
+.logo img {
+}
+
+
+.header .navbar {
+    margin: 0;
+    background: #fff;
+    border: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #858585;
+    font-size: 1.2em;
+    line-height: normal;
+    margin: 17px 10px;
+    padding: 6px 10px !important;
+    border-radius: 5px;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    border-bottom: 2px solid #008CBA;
+    box-sizing: border-box;
+    background: #008CBA;
+}
+
+.navbar-nav > li:hover > a {
+    color: #008CBA;
+}
+
+.header .navbar-nav > li > a {
+    padding: 25px 18px;
+}
+
+.navbar-collapse {
+    background-color: #333333;
+}
+
+.page-section {
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+}
+
+.noPadd {
+    padding: 0;
+}
+
+.page-section h1 {
+    font-size: 3.5em;
+    margin: 90px 0 30px;
+    line-height: 1.2em;
+}
+
+    .page-section h1 span {
+        font-weight: 200;
+    }
+
+.page-section h2 {
+    color: #008CBA;
+}
+
+.page-section p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+/* ------- */
+
+nav#filter {
+    margin-bottom: 1.5em;
+}
+
+    nav#filter li {
+        display: inline-block;
+        margin: 0 0 0 5px;
+    }
+
+    nav#filter a {
+        padding: 4px 12px;
+        line-height: 20px;
+        border: 1px solid #008CBA;
+        text-decoration: none;
+    }
+
+.page-section.intro {
+    min-height: 600px;
+}
+
+.btn {
+    font-weight: 200;
+}
+
+.btn-dark {
+    background: #444;
+    color: #fff;
+}
+
+    .btn-dark:hover {
+        background: #000;
+        color: #fff;
+    }
+
+.back-to-top {
+    display: inline-block;
+    clear: both;
+    background: #fff;
+    color: #333;
+    padding: 0 10px 5px;
+    margin: 20px 0 0;
+    text-shadow: none;
+}
+
+    .back-to-top:hover {
+        background: #333;
+        color: #fff;
+        text-decoration: none;
+    }
+
+hr {
+    border-color: #ddd;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background: #ffffff;
+    box-shadow: 0 10px 10px -10px #000000;
+}
+
+    #navigation > li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+        #navigation > li > a {
+            margin: 1px;
+            color: #000000;
+            background: #cccccc;
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            transition: all 400ms;
+        }
+
+            #navigation > li > a.current,
+            #navigation > li:hover > a {
+                background: #999999;
+            }
+
+.pageSection {
+    min-height: 600px;
+    padding: 20px;
+    background: #dddddd;
+}
+
+    .pageSection:nth-child(odd) {
+        background: #eeeeee;
+    }
+
+.socialIcons li {
+    list-style: none;
+    display: inline;
+    margin-right: 6px;
+}
+
+footer {
+    background-color: #242424;
+    color: #8e8e8e;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+    footer ul li {
+        list-style: none;
+    }
+
+.spclBtn {
+    background: rgba(255, 255, 255, 0.73);
+    color: #000;
+}
+
+@media (min-width: 768px) {
+    .header .navbar-brand {
+        padding-left: 0;
+    }
+
+    .navbar-nav {
+        float: right;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 1.1em;
+        margin: 19px 3px;
+    }
+
+    .header .navbar-nav > li > a {
+        padding: 25px 12px;
+    }
+}
+
+@media (max-width:760px) {
+    .header .navbar-nav > li > a {
+        padding: 7px 12px;
+        font-size: 14px;
+    }
+
+    .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+        border-color: #A8A8A8;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 1.1em;
+        margin: 4px 3px;
+    }
+
+    .navbar-header {
+        background-color: #333333;
+        padding-top: 3px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-section h1 {
+        font-size: 3em;
+    }
+
+    .page-section h2 {
+        font-size: 2em;
+    }
+
+    .page-section h3 {
+        margin-top: 40px;
+        font-size: 1.5em;
+    }
+
+    .page-section p {
+        font-size: 1em;
+        margin: 0 0 20px;
+    }
+
+    .copyRights {
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin: 2px 0 4px 0;
+    }
+
+    .page-section {
+        padding: 15px 0;
+    }
+
+    .heading {
+        padding-bottom: 0px;
+    }
+}
