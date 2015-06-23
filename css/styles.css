@@ -11,6 +11,7 @@ body {
     font-family: 'Roboto', 'sans-serif';
     -webkit-font-smoothing: antialiased;
     background: #fff;
+    height: 100%;
 }
 
 ::selection {
@@ -36,15 +37,17 @@ a {
     a:hover {
         color: #008CBA; /* 6EAA00 */
         text-decoration: none;
+        text-shadow: .5px 1px #008CBA;
     }
 
 .btn {
-    border: 0px;
-    border-radius: 0px;
+    color: #FFF;
+    border-radius: 5px;
+    background-color: #008CBA;
 }
 
     .btn:hover {
-        background: #008CBA; /* 6EAA00 */
+        box-shadow: 0 10px 10px -10px #000000;
         color: #FFF;
     }
 
@@ -63,11 +66,20 @@ a {
 .copyright {
     color: #6D6D6D;
     background: #333333;
-    padding: 20px 0;
+    padding: 15px 0;
+    position: fixed;
+    clear: both;
+    width: 100%;
+    bottom: 0;
 }
 
 #top {
     position: relative;
+}
+
+.profile {
+    float: right;
+    color: #4D4D4D;
 }
 
 /* Header 
@@ -136,7 +148,7 @@ a {
 
 .header .navbar {
     margin: 0;
-    background: #fff;
+    background: #333;
     border: 0;
 }
 
@@ -172,6 +184,7 @@ a {
     width: 100%;
     height: auto;
     padding: 30px 0;
+    margin-bottom: 70px;
 }
 
 .noPadd {

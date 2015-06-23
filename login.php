@@ -25,7 +25,7 @@
             </div>
         </div>
     </section> 
-<!--
+
     <section class="copyright">
          <div class="container">
           <div class="row">
@@ -35,7 +35,7 @@
           </div>
         </div>
     </section>
--->
+
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>
 </body>

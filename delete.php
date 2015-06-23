@@ -32,7 +32,7 @@ $consult = mysql_query("SELECT referencia FROM previos WHERE id_previo='".$id."'
 
 	$result = "DELETE FROM previos Where id_previo='".$id."';";
 	mysql_query($result);
-	$result2 = "DELETE FROM imagenes Where categ_image='".$id."';";
+	$result2 = "DELETE FROM imagenes Where id_previo='".$id."';";
 	mysql_query($result2);
 
 header('Location: index.php');

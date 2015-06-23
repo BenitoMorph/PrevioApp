@@ -1,3 +1,12 @@
+<?php
+ session_start();
+if(!isset($_SESSION['correo'])) {
+     
+	 
+	 header('Location: login.php'); 
+     exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +19,9 @@
 	<link rel="stylesheet" type="text/css" href="css/lightbox.css" />
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/styles.css"/>
+
+	<link rel="stylesheet" type="text/css" href="css/filtergrid.css" />
+	<script type="text/javascript" src="js/tablefilter.js"></script>
 
 	<!--[if gte IE 8]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,7 +44,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 	            </button>
-	            <a href="#" class="navbar-brand scroll-top logo"><img src="img/logo_opt.png" alt="PrevioApp"></a>
+	            <a href="index.php" class="navbar-brand scroll-top logo"><img src="img/logo_opt.png" alt="PrevioApp"></a>
         	</div>
 	        <div id="main-nav" class="collapse navbar-collapse">
 	            <ul class="nav navbar-nav" id="mainNav">
@@ -50,9 +62,9 @@
 <section class="page-section">
 	<div class="container">
 	    <div class="heading text-left">
+	    	<p class="profile">Bienvenido: <strong><?php echo $_SESSION['nombre'] ?></strong></p>
 			<h3>Lista de Previos</h3>
 		</div>
-		<hr>
 		<div class="row">
 	    	<div class="col-md-12 text-center">
 	            <div class="table-responsive">
@@ -66,25 +78,25 @@
 
 					if (mysql_num_rows($result) > 0) {
 
-						echo "<table class='table table-hover'>";
+						echo "<table id='filtro'>";
 						echo "<thead>";
 
 						echo "<tr>";
 						// #636363
-						echo "<th>Referencia</th>
-							<th>Cliente</th>
-							<th>Contenedor</th>
-							<th>Peso</th>
-							<th>Bultos</th>
-							<th>Marcas</th>
-							<th>Series</th>
-							<th>Nombre de Ejecutivo</th>
-							<th>Nombre de Tramitador</th>
-							<th>Operadora</th>
-							<th>Observaciones</th>
-							<th>Fotografias</th>
-							<th>&nbsp;</th>
-							<th>&nbsp;</th>";
+						echo "<th nowrap>Referencia</th>
+							<th nowrap>Cliente</th>
+							<th nowrap>Contenedor</th>
+							<th nowrap>Peso</th>
+							<th nowrap>Bultos</th>
+							<th nowrap>Marcas</th>
+							<th nowrap>Series</th>
+							<th nowrap>Nombre de Ejecutivo</th>
+							<th nowrap>Nombre de Tramitador</th>
+							<th nowrap>Operadora</th>
+							<th nowrap>Observaciones</th>
+							<th nowrap>Fotografias</th>
+							<th nowrap>&nbsp;</th>
+							<th nowrap>&nbsp;</th>";
 						echo "</tr>";
 						echo "</thead>";
 						echo "<tbody>";
@@ -95,20 +107,20 @@
 							$id = $row['id_previo'];
 
 							echo "<tr>";
-						    echo "<td>" . $row['referencia'] . "</td>";
-						    echo "<td>" . $row['cliente'] . "</td>";
-						    echo "<td>" . $row['contenedor'] . "</td>";
-						    echo "<td>" . $row['peso'] . "</td>";
-						    echo "<td>" . $row['bultos'] . "</td>";
-						    echo "<td>" . $row['marcas'] . "</td>";
-						    echo "<td>" . $row['series'] . "</td>";
-						    echo "<td>" . $row['nom_ejecutivo'] . "</td>";
-						    echo "<td>" . $row['nom_tramitador'] . "</td>";
-						    echo "<td>" . $row['operadora'] . "</td>";
+						    echo "<td nowrap>" . $row['referencia'] . "</td>";
+						    echo "<td nowrap>" . $row['cliente'] . "</td>";
+						    echo "<td nowrap>" . $row['contenedor'] . "</td>";
+						    echo "<td nowrap>" . $row['peso'] . "</td>";
+						    echo "<td nowrap>" . $row['bultos'] . "</td>";
+						    echo "<td nowrap>" . $row['marcas'] . "</td>";
+						    echo "<td nowrap>" . $row['series'] . "</td>";
+						    echo "<td nowrap>" . $row['nom_ejecutivo'] . "</td>";
+						    echo "<td nowrap>" . $row['nom_tramitador'] . "</td>";
+						    echo "<td nowrap>" . $row['operadora'] . "</td>";
 						    echo "<td><div style='height: 50px; width: 300px; overflow: auto; text-align: left;'>".$row['observaciones']."</div></td>";
 						    echo "<td><div style='height: 50px; width: 250px; overflow: auto; text-align: center;'>";
 						    	/*Codigo de las fotografias*/
-								$queryfoto = mysql_query("SELECT categ_image,ruta FROM imagenes WHERE categ_image=".$row['id_previo']."") or die(mysql_error());
+								$queryfoto = mysql_query("SELECT id_previo,ruta FROM imagenes WHERE id_previo=".$row['id_previo']."") or die(mysql_error());
 						    		
 								if (mysql_num_rows($queryfoto) > 0) {
 								?>
@@ -116,15 +128,13 @@
 									$i = 1;
 									while(($row = mysql_fetch_array($queryfoto)) AND ($i <= (mysql_num_rows($queryfoto)))) {
 								    ?>
-									<a href="<?php echo $row['ruta']; ?>" data-lightbox="example-set<?php echo $row['categ_image']; ?>"><button class="btn"> <?php echo $i++; ?> </button></a>
+									<a href="<?php echo $row['ruta']; ?>" data-lightbox="example-set<?php echo $row['id_previo']; ?>"><button class="btn"> <?php echo $i++; ?> </button></a>
 									<?php
 										}
 									}
 						    echo "</div></td>";
-						    //echo "<td><a href= './generar_pdf.php?id=$id'>Ver Reporte</a></td>";
-						    echo "<td><a href= './modify.php?id_previo=$id'><span class='glyphicon glyphicon-edit'></span> &nbsp;&nbsp;Modificar</button></a></td>";
-						    echo "<td><a href= './delete.php?id_previo=$id' onclick='return msg()'><span class='glyphicon glyphicon-trash'></span> &nbsp;&nbsp;Eliminar</a></td>";
-						    //<img src='./img/edit.png' width='29px' height='29px' alt='Editar'> 
+						    echo "<td nowrap><a href= './modify.php?id_previo=$id'><span class='glyphicon glyphicon-edit'></span><br> &nbsp;&nbsp;Modificar</button></a></td>";
+						    echo "<td nowrap><a href= './delete.php?id_previo=$id' onclick='return msg()'><span class='glyphicon glyphicon-trash'></span><br> &nbsp;&nbsp;Eliminar</a></td>";
 						    echo "</tr>";
 						}
 						echo "</tbody>";
@@ -134,6 +144,12 @@
 						echo "No se han registrado previos.";
 					}
 				?>
+				<script language="javascript" type="text/javascript"> 
+				//<![CDATA[ 
+				    var tf1 = setFilterGrid("filtro"); 
+				//]]> 
+				</script> 
+
 			</div>
 	    </div>
 	</div>

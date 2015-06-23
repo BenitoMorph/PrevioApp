@@ -80,7 +80,15 @@
                 <input type="text" id="nom_tramitador" name="nom_tramitador" class="form-control"><br/>
 
                 <label for="operadora">Operadora:</label> 
-                <input type="text" id="operadora" name="operadora" class="form-control"><br/>
+                <!--<input type="text" id="operadora" name="operadora" class="form-control"><br/>-->
+                <select name="operadora" id="operadora" class="form-control">
+                	<option value="">Seleccione...</option>
+                	<option value="TAP TERMINAL">TAP TERMINAL</option>
+                	<option value="ATREP">ATREP</option>
+                	<option value="OCUPA">OCUPA</option>
+                	<option value="SSA MÉXICO">SSA MÉXICO</option>
+                	<option value="TIMSA">TIMSA</option>
+                </select><br>
 
                 <label for="observaciones">Observaciones:</label> 
                 <textarea id="observaciones" name="observaciones" class="form-control"></textarea><br/>
