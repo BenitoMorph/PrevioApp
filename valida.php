@@ -3,7 +3,7 @@ require_once __DIR__ . '/connect.php';
 
     $db = new DB_CONNECT();
 
-$correo = $_POST["correo"]; 
+$correo = $_POST["correo"];
 $password = $_POST["contrasena"];
  
 $result = mysql_query("SELECT * FROM usuarios WHERE correo = '$correo'");
@@ -16,8 +16,20 @@ if($row = mysql_fetch_array($result)) {
              $_SESSION['nombre'] = $row['nombre'];
 			 $_SESSION['tipo'] = $row['tipo'];
              $_SESSION['id_usuario'] = $row['id_usuario'];
-             sleep(2);
-             header("Location: index.php");  
+
+             if ($row["status"] == 'Activo') {
+                 # code...
+                header("Location: index.php");
+             } else {
+                ?>
+                 <script>
+                     alert("No puedes ingresar a este sitio, \n Tu cuenta no se encuentra Activa.");
+                     location.href = "login.php";
+                 </script>
+             <?php
+             }
+
+             
             }
 		 else {
 		     session_start();  
@@ -25,7 +37,6 @@ if($row = mysql_fetch_array($result)) {
              $_SESSION['nombre'] = $row['nombre'];
 			 $_SESSION['tipo'] = $row['tipo'];
              $_SESSION['id_usuario'] = $row['id_usuario'];
-             //header("Location: profesor/index.php");
              ?>
              <script>
                  alert("No puedes ingresar a este sitio, \n Tu usuario no cuenta con los privilegios necesarios.");
