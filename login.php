@@ -11,21 +11,21 @@
         <div id="login">
             <div class="body"></div>
             <div class="grad"></div>
-            <div class="header">
-                <div><img src="IMG/logotipo.png" alt="" width="200"></div>
-                <div>Previo<span>App</span></div>
-            </div>
 
-            <br>
-            <div class="login">
+            <div class="container">
+                <div class="header">
+                    <div><img src="img/logotipo.png" alt="" width="200"></div>
+                    <div>Previo<span>App</span></div>
+                </div>
 
-                <form action="valida.php" method="post"> 
-                    <input type="email" placeholder="Usuario" name="correo" required><br>
-                    <input type="password" placeholder="Contraseña" name="contrasena" required><br>
-                    <input type="submit" name="iniciar" value="Iniciar Sesión">
-                    <br>
-                </form>
-
+                <div class="login">
+                    <form action="valida.php" method="post"> 
+                        <input type="email" placeholder="Usuario" name="correo" required><br>
+                        <input type="password" placeholder="Contraseña" name="contrasena" required><br>
+                        <input type="submit" name="iniciar" value="Iniciar Sesión">
+                        <br>
+                    </form>
+                </div>
             </div>
         </div>
     </section>

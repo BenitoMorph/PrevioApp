@@ -1,4 +1,4 @@
-body{
+body {
 	margin: 0;
 	padding: 0;
 	background: #fff;
@@ -7,49 +7,52 @@ body{
 	font-size: 12px;
 }
 
-.body{
+.body {
 	position: absolute;
-	top: -20px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
-	width: auto;
-	height: auto;
-	background-image: url(../img/fondo.jpg);
-	background-size: cover;
-	-webkit-filter: blur(5px);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	z-index: 0;
-
-}
-
-.grad{
-	position: absolute;
-	top: -20px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
 	width: auto;
 	height: auto;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+	background-size: cover;
+	background-image: url(../img/fondo.jpg);
+	-webkit-filter: blur(5px);
+	-o-filter: blur(5px);
+	filter: blur(5px);
+}
+
+.grad {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	z-index: 1;
+	width: auto;
+	height: auto;
 	opacity: 0.7;
+	background: -webkit-gradient(linear, left top, left bottom,
+				 color-stop(0%,rgba(0,0,0,0)),
+				 color-stop(100%,rgba(0,0,0,0.65)));
 }
 
-.logo{
-  top:  1px; 
-  left: 10px;
+.logo {
+	top:  1px; 
+	left: 10px;
 }
 
-
-
-.header{
+.header {
 	position: absolute;
 	top: calc(29% - 0px);
-	left: calc(32% - 0px);
+	left: calc(34% - 0px);
+	position: fixed;
+	float: center;
 	z-index: 2;
 }
 
-.header div{
+.header div {
 	float: left;
 	color: #fff;
 	font-family: sans-serif;
@@ -58,12 +61,12 @@ body{
 	opacity: 0.9;
 }
 
-.header div span{
+.header div span {
 	color: #007CBA !important;
 
 }
 
-.login{
+.login {
 	position: absolute;
 	top: calc(50% - 100px);
 	left: calc(50% - 50px);
@@ -75,8 +78,8 @@ body{
 
 .login input[type="password"], 
 	input[type="email"] {
-	width: 250px;
-	height: 30px;
+	width: 240px;
+	height: 35px;
 	background: transparent;
 	border: 1px solid rgba(255,255,255,0.6);
 	border-radius: 2px;
@@ -88,8 +91,8 @@ body{
 	margin-top: 10px;
 }
 
-.login input[type="submit"]{
-	width: 260px;
+.login input[type="submit"] {
+	width: 240px;
 	height: 35px;
 	background: #fff;
 	border: 1px solid #fff;
@@ -103,32 +106,37 @@ body{
 	margin-top: 10px;
 }
 
-.login input[type=submit]:hover{
+.login input[type="submit"]:hover {
 	opacity: 0.8;
 }
 
-.login input[type=submit]:active{
+.login input[type="submit"]:active {
 	opacity: 0.6;
 }
 
-.login input[type=text]:focus{
+.login input[type="text"]:focus {
 	outline: none;
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.login input[type=password]:focus{
+.login input[type="email"]:focus {
 	outline: none;
 	border: 1px solid rgba(255,255,255,0.9);
 }
 
-.login input[type=submit]:focus{
+.login input[type="password"]:focus {
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type="submit"]:focus {
 	outline: none;
 }
 
-::-webkit-input-placeholder{
+::-webkit-input-placeholder {
    color: rgba(255,255,255,0.6);
 }
 
-::-moz-input-placeholder{
+::-moz-input-placeholder {
    color: rgba(255,255,255,0.6);
 }
