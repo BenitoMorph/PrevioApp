@@ -5,11 +5,12 @@ require_once __DIR__ . '/connect.php';
 
 $correo = $_POST["correo"];
 $password = $_POST["contrasena"];
+$encry_password = sha1($password);
  
 $result = mysql_query("SELECT * FROM usuarios WHERE correo = '$correo'");
 
 if($row = mysql_fetch_array($result)) {
-     if($row["password"] == $password) {
+     if($row["password"] == $encry_password) {
 		 if($row["tipo"] == 'Ejecutivo') {
              session_start();  
              $_SESSION['correo'] = $correo;
