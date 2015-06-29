@@ -19,9 +19,11 @@ if(!isset($_SESSION['correo'])) {
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/styles.css"/>
 
+	<link rel="stylesheet" type="text/css" href="css/filtergrid.css" />
+
 	<!--[if gte IE 8]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->	
+	<![endif]-->
 </head>
 
 <body>
@@ -35,13 +37,13 @@ if(!isset($_SESSION['correo'])) {
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 	            </button>
-	            <a href="#" class="navbar-brand scroll-top logo"><img src="img/logo_opt.png" alt="PrevioApp"></a>
+	            <a href="index.php" class="navbar-brand scroll-top logo"><img src="img/logo_opt.png" alt="PrevioApp"></a>
         	</div>
 	        <div id="main-nav" class="collapse navbar-collapse">
 	            <ul class="nav navbar-nav" id="mainNav">
 		            <li><a href="index.php"><span class="glyphicon glyphicon-home"></span>&nbsp;Inicio</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-search"></span>&nbsp;Busqueda</a></li>
-					<li class="active"><a href="download.php"><span class="glyphicon glyphicon-cloud-download"></span>&nbsp;Descargar Fotos</a></li>
+					<li class="active"><a href="search.php"><span class="glyphicon glyphicon-search"></span>&nbsp;Busqueda</a></li>
+					<li><a href="download.php"><span class="glyphicon glyphicon-cloud-download"></span>&nbsp;Descargar Fotos</a></li>
 					<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
 	            </ul>
 	        </div>
@@ -53,24 +55,13 @@ if(!isset($_SESSION['correo'])) {
 <section class="page-section">
 	<div class="container">
 	    <div class="heading text-left">
-			<h3>Descarga Fotografías</h3>
+	    	<p class="profile">Bienvenido: <strong><?php echo $_SESSION['nombre'] ?></strong></p>
+	    		<h3>Busqueda Avanzada</h3>
+			<hr>
 		</div>
-		<hr>
 		<div class="row">
 			<div class="col-md-2"></div>
-	    	<div class="col-md-8 text-center">
-				<ul id="search_list">
-				<?php
-					require_once('classes/ZIPclass/funciones.inc.php');
-					
-					$carpetas = obtener_carpetas('fotos');
-
-					foreach ($carpetas as $carpeta) {
-					echo  '<a href="download_zip.php?folder=' .  $carpeta .  '" class="btn btn-block btn-primary btn-default">&nbsp;&nbsp;' . $carpeta . '&nbsp;&nbsp;</a>';
-
-					}
-				?>
-				</ul>
+	    	<div class="col-md-8 text-center">	            	
 			</div>
 			<div class="col-md-2"></div>
 	    </div>
@@ -89,6 +80,8 @@ if(!isset($_SESSION['correo'])) {
 
     <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a>
 
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/lightbox.js"></script>
 <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>    
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.js" type="text/javascript"></script>

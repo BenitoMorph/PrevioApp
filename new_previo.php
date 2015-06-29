@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['correo'])) {
+     
+	 
+	 header('Location: login.php'); 
+     exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,6 +94,7 @@
                 	<option value="">Seleccione...</option>
                 	<option value="TAP TERMINAL">TAP TERMINAL</option>
                 	<option value="ATREP">ATREP</option>
+                	<option value="CONTECON">CONTECON</option>
                 	<option value="OCUPA">OCUPA</option>
                 	<option value="SSA MÉXICO">SSA MÉXICO</option>
                 	<option value="TIMSA">TIMSA</option>

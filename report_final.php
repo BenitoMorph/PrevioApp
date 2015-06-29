@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['correo'])) {
+     
+	 
+	 header('Location: login.php'); 
+     exit();
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
