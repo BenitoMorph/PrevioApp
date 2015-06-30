@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['correo'])) {
+     
+     
+     header('Location: index.php'); 
+     exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +14,8 @@
     <title>PrevioApp</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/code.css"/>
+    <script>
+    </script>
 </head>
 <body>
     <section class="page-section">
