@@ -7,7 +7,7 @@ if(!isset($_SESSION['correo'])) {
      exit();
 }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html>o
 <html lang="en">
 <head>
 	<meta charset="utf-8">
