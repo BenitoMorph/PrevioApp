@@ -20,9 +20,6 @@ if(!isset($_SESSION['correo'])) {
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/styles.css"/>
 
-	<link rel="stylesheet" type="text/css" href="css/filtergrid.css" />
-	<script type="text/javascript" src="js/tablefilter.js"></script>
-
 	<!--[if gte IE 8]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -64,6 +61,7 @@ if(!isset($_SESSION['correo'])) {
 	    <div class="heading text-left">
 	    	<p class="profile">Bienvenido: <strong><?php echo $_SESSION['nombre'] ?></strong></p>
 			<h3>Lista de Previos</h3>
+			<hr>
 		</div>
 		<div class="row">
 	    	<div class="col-md-12 text-center">
@@ -78,7 +76,7 @@ if(!isset($_SESSION['correo'])) {
 
 					if (mysql_num_rows($result) > 0) {
 
-						echo "<table id='filtro'>";
+						echo "<table>";
 						echo "<thead>";
 
 						echo "<tr>";
@@ -144,11 +142,6 @@ if(!isset($_SESSION['correo'])) {
 						echo "No se han registrado previos.";
 					}
 				?>
-				<script language="javascript" type="text/javascript"> 
-				//<![CDATA[ 
-				    var tf1 = setFilterGrid("filtro"); 
-				//]]> 
-				</script> 
 
 			</div>
 	    </div>
