@@ -53,6 +53,8 @@ if(!isset($_SESSION['correo'])) {
 <section class="page-section">
 	<div class="container">
 	    <div class="heading text-left">
+	    <p class="profile">Bienvenido: <strong><?php echo $_SESSION['nombre'] ?></strong></p>
+	    	<br>
 			<h3>Crear Previo</h3>
 		</div>
 		<hr>

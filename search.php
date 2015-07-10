@@ -56,6 +56,7 @@ if(!isset($_SESSION['correo'])) {
 	<div class="container">
 	    <div class="heading text-left">
 	    	<p class="profile">Bienvenido: <strong><?php echo $_SESSION['nombre'] ?></strong></p>
+	    		<br>
 	    		<h3>Busqueda Avanzada</h3>
 			<hr>
 		</div>
