@@ -40,7 +40,7 @@ if(!isset($_SESSION['correo'])) {
 	        <div id="main-nav" class="collapse navbar-collapse">
 	            <ul class="nav navbar-nav" id="mainNav">
 		            <li><a href="index.php"><span class="glyphicon glyphicon-home"></span>&nbsp;Inicio</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-search"></span>&nbsp;Busqueda</a></li>
+					<li><a href="search.php"><span class="glyphicon glyphicon-search"></span>&nbsp;Busqueda</a></li>
 					<li class="active"><a href="download.php"><span class="glyphicon glyphicon-cloud-download"></span>&nbsp;Descargar Fotos</a></li>
 					<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
 	            </ul>
@@ -53,6 +53,8 @@ if(!isset($_SESSION['correo'])) {
 <section class="page-section">
 	<div class="container">
 	    <div class="heading text-left">
+	    <p class="profile">Bienvenido: <strong><?php echo $_SESSION['nombre'] ?></strong></p>
+	    	<br>
 			<h3>Descarga Fotografías</h3>
 		</div>
 		<hr>

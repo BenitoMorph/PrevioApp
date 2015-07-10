@@ -46,7 +46,7 @@ if(!isset($_SESSION['correo'])) {
 	        <div id="main-nav" class="collapse navbar-collapse">
 	            <ul class="nav navbar-nav" id="mainNav">
 		            <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span>&nbsp;Inicio</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-search"></span>&nbsp;Busqueda</a></li>
+					<li><a href="search.php"><span class="glyphicon glyphicon-search"></span>&nbsp;Busqueda</a></li>
 					<li><a href="download.php"><span class="glyphicon glyphicon-cloud-download"></span>&nbsp;Descargar Fotos</a></li>
 					<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Cerrar Sesión</a></li>
 	            </ul>
@@ -60,6 +60,7 @@ if(!isset($_SESSION['correo'])) {
 	<div class="container">
 	    <div class="heading text-left">
 	    	<p class="profile">Bienvenido: <strong><?php echo $_SESSION['nombre'] ?></strong></p>
+	    	<br>
 			<h3>Lista de Previos</h3>
 			<hr>
 		</div>
@@ -119,20 +120,20 @@ if(!isset($_SESSION['correo'])) {
 						    echo "<td><div style='height: 50px; width: 250px; overflow: auto; text-align: center;'>";
 						    	/*Codigo de las fotografias*/
 								$queryfoto = mysql_query("SELECT id_previo,ruta FROM imagenes WHERE id_previo=".$row['id_previo']."") or die(mysql_error());
-						    		
-								if (mysql_num_rows($queryfoto) > 0) {
 								?>
-									<?php
-									$i = 1;
-									while(($row = mysql_fetch_array($queryfoto)) AND ($i <= (mysql_num_rows($queryfoto)))) {
-								    ?>
-									<a href="<?php echo $row['ruta']; ?>" data-lightbox="example-set<?php echo $row['id_previo']; ?>"><button class="btn"> <?php echo $i++; ?> </button></a>
-									<?php
-										}
+								<?php
+								if (mysql_num_rows($result) > 0) {
+									while($row = mysql_fetch_array($queryfoto)) {									
+							    ?>
+										<a href="<?php echo $row['ruta']; ?>" data-lightbox="example-set<?php echo $row['id_previo']; ?>"><button class="btn"> Ver </button></a>								
+								<?php
 									}
+								} else {
+									echo "No se capturaron Fotografias";
+								}
 						    echo "</div></td>";
-						    echo "<td nowrap><a href= './modify.php?id_previo=$id'><span class='glyphicon glyphicon-edit'></span><br> &nbsp;&nbsp;Modificar</button></a></td>";
-						    echo "<td nowrap><a href= './delete.php?id_previo=$id' onclick='return msg()'><span class='glyphicon glyphicon-trash'></span><br> &nbsp;&nbsp;Eliminar</a></td>";
+						    echo "<td nowrap><a href= './modify.php?id_previo=".$id."'><span class='glyphicon glyphicon-edit'></span><br> &nbsp;&nbsp;Modificar</button></a></td>";
+						    echo "<td nowrap><a href= './delete.php?id_previo=".$id."' onclick='return msg()'><span class='glyphicon glyphicon-trash'></span><br> &nbsp;&nbsp;Eliminar</a></td>";
 						    echo "</tr>";
 						}
 						echo "</tbody>";
