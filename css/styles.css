@@ -183,7 +183,7 @@ a {
 .page-section {
     width: 100%;
     height: auto;
-    padding: 30px 0;
+    padding: 40px 0;
     margin-bottom: 70px;
 }
 
@@ -210,7 +210,32 @@ a {
     line-height: 1.6em;
 }
 
-/* ------- */
+/* =============== TABLE ================ */
+
+th  {
+    padding: 10px 15px 10px 15px;
+    background-color: #008CBA;
+    border-bottom: 10px solid #047AA1;
+    color: #FFF;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    padding: 3px 15px 3px 15px;
+}
+
+td:first-child {
+    border-left: 1px solid #DDDDDD;
+}
+
+tr:hover {
+    background-color: #F5F4F4;
+}
+
+/* ======================================= */
+
 
 nav#filter {
     margin-bottom: 1.5em;
@@ -335,7 +360,7 @@ footer {
     color: #000;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
     .header .navbar-brand {
         padding-left: 0;
     }
@@ -345,7 +370,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .navbar-inverse .navbar-nav > li > a {
         font-size: 1.1em;
         margin: 19px 3px;
@@ -359,7 +384,7 @@ footer {
 @media (max-width:760px) {
     .header .navbar-nav > li > a {
         padding: 7px 12px;
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
@@ -388,7 +413,7 @@ footer {
     }
 
     .page-section h3 {
-        margin-top: 40px;
+        margin-top: 20px;
         font-size: 1.5em;
     }
 
@@ -405,7 +430,7 @@ footer {
     }
 
     .page-section {
-        padding: 15px 0;
+        padding: 45px 0 -40px 0;
     }
 
     .heading {
