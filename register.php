@@ -15,14 +15,14 @@
 				<div class="login">
 					<div>Registro<br></div>
 					<form method="POST" action="add.php">              
-						<input type="text" required placeholder="Ingresa tu nombre..." name="realname"><br>
+						<input type="text" required placeholder="Ingresa tu nombre..." name="user"><br>
 						<input type="text" required placeholder="Ingresa tu empresa..." name="empresa"><br>
-						<input type="email" required placeholder="Ingresa tu email..." name="nick"><br>
+						<input type="email" required placeholder="Ingresa tu email..." name="correo"><br>
 
 						 <select required name="tipo_user">
 							<option value="">Seleccione... </option>
-							<option value="Tramitador">Tramitador</option>
 							<option value="Ejecutivo">Ejecutivo</option>
+							<option value="Tramitador">Tramitador</option>
 						</select><br>
 
 						<input minlength="6" type="password"required placeholder="Ingresa tu contraseña..." name="pass"><br>
